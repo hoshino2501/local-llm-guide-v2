@@ -1,0 +1,10 @@
+# 使う場合は backend.tf にリネームし、バケット名等を編集して `terraform init -migrate-state`。
+terraform {
+  backend "s3" {
+    bucket       = "YOUR-TFSTATE-BUCKET"
+    key          = "local-llm-guide/terraform.tfstate"
+    region       = "ap-northeast-1"
+    use_lockfile = true
+    encrypt      = true
+  }
+}
