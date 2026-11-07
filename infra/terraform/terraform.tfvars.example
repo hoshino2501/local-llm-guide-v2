@@ -1,0 +1,15 @@
+# cp terraform.tfvars.example terraform.tfvars して編集
+project     = "local-llm-guide"
+environment = "prod"
+region      = "ap-northeast-1"
+
+# Bedrock(要モデルアクセス有効化。品質検証のうえ決定)
+bedrock_model_id = "jp.anthropic.claude-sonnet-4-5-20250929-v1:0"
+
+# 通知先(未設定だと Budgets は作成されません)
+alert_emails       = ["ops@example.org"]
+monthly_budget_usd = 50
+
+# 独自ドメインを使う場合のみ
+# domain_name     = "guide.example.org"
+# route53_zone_id = "Z0123456789ABC"
